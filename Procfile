@@ -1,1 +1,1 @@
-web: gunicorn main:home --log-file -
+web: gunicorn main:home
