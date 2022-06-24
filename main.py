@@ -14,7 +14,6 @@ def success():
         df = pd.read_csv(r"bills.csv", index_col=0)
         ind = df.tail(1).index
         df.loc[ind[0] + 1] = [ino, company]
-        print(df)
         df.to_csv('bills.csv')
         return 'Success'
 
