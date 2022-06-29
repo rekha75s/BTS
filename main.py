@@ -1,4 +1,4 @@
-from flask import Flask, render_template,redirect,url_for,request
+from flask import Flask, render_template, redirect, url_for, request, jsonify
 import os
 import pandas as pd
 app=Flask(__name__)
@@ -15,7 +15,7 @@ def success():
         ind = df.tail(1).index
         df.loc[ind[0] + 1] = [ino, company]
         df.to_csv('bills.csv')
-        return 'Success'
+        return jsonify(result={"status": 200})
 
 if __name__=='__main__':
     app.run(debug=True)
