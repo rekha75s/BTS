@@ -15,7 +15,7 @@ def success():
         ind = df.tail(1).index
         df.loc[ind[0] + 1] = [ino, company]
         df.to_csv('bills.csv')
-        return jsonify(result={"status": 200})
+
 
 if __name__=='__main__':
     app.run(debug=True)
